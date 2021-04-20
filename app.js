@@ -1,5 +1,4 @@
 const { Client } = require("discord.js");
-const { config } = require("dotenv");
 
 const client = new Client({
 	disableEveryone:  true,
@@ -8,16 +7,12 @@ const client = new Client({
 	messageSweepInterval: 60
 });
 
-config({
-    path: __dirname + "/.env"
-});
-
 client.on("ready", () => {
     console.log('Bot started')
 });
 
 /* BELOW HERE IS ONLY FOR SERVER-SIDE COMMANDS */
 
+client.on("message")
 
-
-client.login(process.env.TOKEN);
+client.login(process.env.DJS_TOKEN);
