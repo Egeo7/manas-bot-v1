@@ -25,13 +25,14 @@ client.on('message', message => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
 	const command = args.shift().toLowerCase();
 
-	if (command === 'ping') {
-		message.channel.send('Pong.');
-	} else if (command === 'beep') {
-		message.channel.send('Boop.');
-	}
+	message.guild.channels.cache.find(c => c.name.contains === "katılanlar").send("test");
+
 	// other commands...
 });
+
+client.on('guildMemberAdd', guild, member => {
+    guild.channels.cache.find(c => c.name.contains === "katılanlar").send("test");
+})
 
 
 
