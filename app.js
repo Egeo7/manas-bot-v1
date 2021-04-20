@@ -13,6 +13,4 @@ client.on("ready", () => {
 
 /* BELOW HERE IS ONLY FOR SERVER-SIDE COMMANDS */
 
-client.on("message")
-
 client.login(process.env.DJS_TOKEN);
