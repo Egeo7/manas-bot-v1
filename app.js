@@ -8,7 +8,11 @@ const client = new Client({
 });
 
 client.on("ready", () => {
+    client.user.setStatus('online');
+    client.user.setActivity(`manashub.keyubu.com`, { type: 'PLAYING' })
+        .catch(err => client.logger.error(err));
     console.log('Bot started')
+    
 });
 
 /* BELOW HERE IS ONLY FOR SERVER-SIDE COMMANDS */
